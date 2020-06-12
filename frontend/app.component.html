@@ -1,0 +1,68 @@
+    <h1>CUSTOMER MANAGEMENT SYSTEM</h1>
+    <div>
+    <form #s="ngForm" name="form"(ngSubmit)="onSubmit(s)">
+      <div>
+        <label>userid</label>
+        <input [(ngModel)]="data.userid" name="userid" type="number" >
+      
+        <label>Name</label>
+        <input  [(ngModel)]="data.Name" name="Name" type="text">
+     
+        <label>Email</label>
+        <input  [(ngModel)]="data.Email" name="Email" type="text">
+     
+        <label>ContactNum</label>
+        <input [(ngModel)]="data.ContactNum" name="ContactNum" type="number">
+      
+        <label>Address</label>
+        <input [(ngModel)]="data.Address" name="Address" type="text">
+      </div>
+      <br>
+      <div class="center">
+        <button type="submit">{{user}}</button>
+      </div>
+     
+    </form> 
+    </div>
+    <br>
+    <br>
+
+    <h2>CUSTOMER DETAILS</h2>
+   <br>
+   <table>
+      <thead>
+        <th>id</th>
+        <th>userid</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>ContactNum</th>
+        <th>Address</th>            
+        <th>Edit</th>
+        <th>Delete</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of mydata">
+          <td>{{user.id}}</td>
+          <td>{{user.userid}}</td>
+          <td>{{user.Name}}</td>
+          <td>{{user.Email}}</td>              
+          <td>{{user.ContactNum}}</td>
+          <td>{{user.Address}}</td> 
+          <td>
+             
+            <button (click)="edit(user)" type="submit">Edit</button> 
+     
+        </td>
+        <td>
+
+          <button (click)="delete(user.id)" type="submit">Delete</button> 
+        </td>
+        </tr>
+      </tbody>
+    </table> 
+         
+  
+
+ 
+
+
